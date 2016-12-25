@@ -1,0 +1,26 @@
+<2瞒盔>
+-积己
+int *VarName = new int[10];
+ for(int i=0; i<10; i++)
+ VarName[i] = new int[100];
+-秦力
+for(int i=0; i<10; i++)
+ delete [] VarName[i];
+ delete [] VarName;
+ <3瞒盔>
+-积己
+int VarName = new int[10];
+ for(int i=0;i<10;i++)
+ {
+ VarName[i] = new int[100];
+ for(int j=0;j<100;j++)
+ VarName[i][j] = new int[200];
+ }
+-秦力
+for(int i=0;i<10;i++)
+ {
+ for(int j=0;j<100;j++)
+ delete [] VarName[i][j];
+ delete [] VarName[i];
+ }
+ delete [] VarName;
